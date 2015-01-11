@@ -1,0 +1,20 @@
+﻿<Application 
+    x:Class="GramophoneApp.App" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:local="using:GramophoneApp"
+    xmlns:converters="using:Converters"
+    xmlns:vm="using:GramophoneApp.ViewModels">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="ms-appx:///Styles/Palette.xaml"/>
+                <ResourceDictionary Source="ms-appx:///Styles/Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <converters:BooleanToVisibilityConverter x:Key="TrueToVisConv" />
+            <converters:BooleanToVisibilityConverter x:Key="FalseToVisConv" IsReversed="True" />
+            <converters:StringListToStringConverter x:Key="StringListToStringConverter" />
+            <vm:ViewModelLocator x:Key="Locator" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

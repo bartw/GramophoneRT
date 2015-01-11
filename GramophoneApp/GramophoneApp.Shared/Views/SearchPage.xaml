@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="GramophoneApp.Views.SearchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GramophoneApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Controls"
+    mc:Ignorable="d"
+    DataContext="{Binding Search, Source={StaticResource Locator}}">
+    
+    <Page.Resources>
+        <ResourceDictionary Source="ms-appx:///Controls/SearchTextBox.xaml"/>
+    </Page.Resources>
+
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <controls:SearchTextBox Grid.Row="0" Margin="12" RequestedTheme="Dark" Text="{Binding Query, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" SearchButtonCommand="{Binding SearchCommand}" Style="{StaticResource SearchTextBoxStyle}" PlaceholderText="Search"/>
+        <ListView Grid.Row="1" ItemsSource="{Binding Results}" SelectedItem="{Binding SelectedResult, Mode=TwoWay}" Margin="24">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0,0,0,3" BorderBrush="#599737" Padding="12">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding Path=title}" Foreground="#FFFFFF" Style="{StaticResource DataStyle}"/>
+                            <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=format, Converter={StaticResource StringListToStringConverter}}" Style="{StaticResource DataStyle}"/>
+                            <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=label, Converter={StaticResource StringListToStringConverter}}" Style="{StaticResource DataStyle}"/>
+                            <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="{Binding Path=year}" Style="{StaticResource DataStyle}"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>

@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="GramophoneApp.Views.ReleasePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GramophoneApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding Release, Source={StaticResource Locator}}">
+
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <Grid Margin="24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" TextWrapping="Wrap" Text="{Binding Path=Release.Artist}" Foreground="#FFFFFF" Style="{StaticResource DataStyle}"/>
+            <TextBlock Grid.Row="1" TextWrapping="Wrap" Text="{Binding Path=Release.Title}" Foreground="#FFFFFF" Style="{StaticResource DataStyle}"/>
+            <TextBlock Grid.Row="2" TextWrapping="Wrap" Text="{Binding Path=Release.Format}" Style="{StaticResource DataStyle}"/>
+            <TextBlock Grid.Row="3" TextWrapping="Wrap" Text="{Binding Path=Release.Label}" Style="{StaticResource DataStyle}"/>
+            <TextBlock Grid.Row="4" TextWrapping="Wrap" Text="{Binding Path=Release.Year}" Style="{StaticResource DataStyle}"/>
+        </Grid>
+    </Grid>
+</Page>

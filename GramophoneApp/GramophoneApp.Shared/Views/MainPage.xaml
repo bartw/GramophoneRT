@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="GramophoneApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GramophoneApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ext="using:Controls"
+    mc:Ignorable="d"
+    DataContext="{Binding Main, Source={StaticResource Locator}}">
+
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <Grid Background="{StaticResource PrimaryColorBrush}" Visibility="{Binding IsLoggingIn, Converter={StaticResource FalseToVisConv}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="3*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="12,24,12,6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Path Grid.Row="0" Stretch="Uniform" Fill="{StaticResource SecondaryColorBrush}" Margin="0,0,0,0" Data="M7.9886802,59.931L36.942522,59.931C37.63521,59.931,38.195002,60.490814,38.195002,61.183532L38.195002,64.000003 6.7359993,64.000003 6.7359993,61.183532C6.7359998,60.490814,7.2958909,59.931,7.9886802,59.931z M8.6670002,49.757999L36.004,49.757999 36.004,58.000999 8.6670002,58.000999z M12.317,46.732L32.457001,46.732 32.457001,48.192999 12.317,48.192999z M6.3476946,40.997001L19.115493,42.693502 19.159211,42.62158C19.440399,42.205605 19.916627,41.931998 20.45695,41.931998 21.320168,41.931998 22.022,42.632431 22.022,43.495749 22.022,44.360166 21.320168,45.061999 20.45695,45.061999 19.75453,45.061999 19.160431,44.59868 18.962338,43.961281L18.955912,43.936267 6.1849997,42.2405z M5.5349419,28.681L9.7079996,34.731846C9.7079998,34.731846,0.73567438,40.158886,6.7875988,51.218769L6.7875988,55.392C6.787599,55.392,-7.6116123,44.958422,5.5349419,28.681z M24.664,2.4529991C25.795486,4.9387207 28.411255,9.4205208 32.402109,14.956947 36.383762,20.477873 39.803122,24.370991 41.806999,26.233 40.73291,23.865789 38.28624,19.566269 34.08569,13.743343 30.093636,8.2096176 26.666576,4.3110962 24.664,2.4529991z M23.184471,0.00043106079C24.647804,0.056751251 29.765936,5.6139374 35.100275,13.011444 40.791733,20.899324 44.569008,27.896809 43.544315,28.633806 43.416378,28.726744 43.219353,28.717426 42.961395,28.614559L42.863033,28.572138 42.073814,28.433519C20.308094,24.776066,11.378837,33.688999,11.378837,33.688999L6.9959996,27.220139C19.441342,15.515472,22.207006,5.6041603,22.766068,0.83581161L22.782541,0.68844223 22.776909,0.62369919C22.766636,0.45028687,22.783484,0.31096268,22.828836,0.20828629L22.830215,0.20571518 22.83343,0.16999817 22.844942,0.17823029 22.85948,0.15109634C22.882204,0.11593246 22.909533,0.086708069 22.941554,0.063594818 23.005604,0.017368317 23.086916,-0.0033226013 23.184471,0.00043106079z"/>
+                <TextBlock Grid.Row="1" HorizontalAlignment="Center" FontWeight="ExtraBold" Foreground="{StaticResource SecondaryColorBrush}" Style="{StaticResource TitleTextBlockStyle}" Text="gramophone"/>
+                <TextBlock Grid.Row="2" HorizontalAlignment="Center" Foreground="{StaticResource SecondaryColorBrush}" Style="{StaticResource SubheaderTextBlockStyle}" Text="BETA"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="24,0,24,24" Visibility="{Binding IsLoggedIn, Converter={StaticResource FalseToVisConv}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Content="LOGIN" Style="{StaticResource MenuButton}" Command="{Binding LoginCommand}"/>
+                <Button Grid.Row="1" Content="ABOUT" Style="{StaticResource MenuButton}" Command="{Binding AboutCommand}"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="24,0,24,24" Visibility="{Binding IsSyncing, Converter={StaticResource TrueToVisConv}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0" Text="SYNCING LISTS" Style="{StaticResource MenuTextBlock}"/>
+            </Grid>
+            <Grid Grid.Row="1" Margin="24,0,24,24" Visibility="{Binding MenuAvailable, Converter={StaticResource TrueToVisConv}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Content="SEARCH" Style="{StaticResource MenuButton}" Command="{Binding SearchCommand}"/>
+                <Button Grid.Row="1" Content="WANTLIST" Style="{StaticResource MenuButton}" Command="{Binding WantlistCommand}"/>
+                <Button Grid.Row="2" Content="COLLECTION" Style="{StaticResource MenuButton}" Command="{Binding CollectionCommand}"/>
+                <Button Grid.Row="3" Content="SYNC LISTS" Style="{StaticResource MenuButton}" Command="{Binding SyncCommand}"/>
+                <Button Grid.Row="4" Content="LOGOUT" Style="{StaticResource MenuButton}" Command="{Binding LogoutCommand}"/>
+                <Button Grid.Row="5" Content="ABOUT" Style="{StaticResource MenuButton}" Command="{Binding AboutCommand}"/>
+            </Grid>
+        </Grid>
+        <WebView ext:WebViewExtensions.UriSource="{Binding LoginUrl}" NavigationCompleted="WebView_NavigationCompleted" Visibility="{Binding IsLoggingIn, Converter={StaticResource TrueToVisConv}}" />
+    </Grid>
+</Page>

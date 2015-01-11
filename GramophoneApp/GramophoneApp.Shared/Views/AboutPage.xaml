@@ -1,0 +1,39 @@
+﻿<Page
+    x:Class="GramophoneApp.Views.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GramophoneApp.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    DataContext="{Binding About, Source={StaticResource Locator}}">
+
+    <Grid Background="{StaticResource BackgroundBrush}">
+        <Grid Margin="24">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="Gramophone is an app to manage your Discogs activities on Windows Phone and Windows."/>
+            <TextBlock Grid.Row="1" TextWrapping="Wrap" Foreground="#FFFFFF" Style="{StaticResource DataStyle}" Text="Disclaimer"/>
+            <TextBlock Grid.Row="2" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="Gramophone is a hobby project that I do because I love developing. I do however have a life and family. Therefore I can't give any guarantees about deadlines, crashes or any other problems."/>
+            <TextBlock Grid.Row="3" TextWrapping="Wrap" Foreground="#FFFFFF" Style="{StaticResource DataStyle}" Text="Features"/>
+            <TextBlock Grid.Row="4" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="Login / Logout"/>
+            <TextBlock Grid.Row="5" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="Search releases"/>
+            <TextBlock Grid.Row="6" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="Remember credentials"/>
+            <TextBlock Grid.Row="7" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="Sync wantlist / collection"/>
+            <TextBlock Grid.Row="8" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="View wantlist / collection"/>
+            <TextBlock Grid.Row="9" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="Remember wantlist / collection"/>
+            <TextBlock Grid.Row="10" TextWrapping="Wrap" Style="{StaticResource DataStyle}" Text="View individual release"/>
+        </Grid>
+    </Grid>
+</Page>
