@@ -18,15 +18,10 @@ The beta will come with limited functionality. You can expect the following feat
 * Login / Logout
 * Search releases
 * Remember credentials
-
-The following features are almost done.
-
 * Sync wantlist / collection
 * View wantlist / collection
 * Remember wantlist / collection
 * View individual release
-
-I will also publish all my code in this repository in the near future.
 
 Problems, questions and suggestions
 -
