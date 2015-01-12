@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="b8062f85-5eb0-4ca0-8b8c-aa1f4d7da66e" Publisher="CN=Bart" Version="0.5.0.0" />
-  <mp:PhoneIdentity PhoneProductId="b8062f85-5eb0-4ca0-8b8c-aa1f4d7da66e" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="24952BartWijnants.GramophoneRT" Publisher="CN=15D0498C-F135-44C3-AB47-C9100F25B336" Version="1.1.0.0" />
+  <mp:PhoneIdentity PhoneProductId="c6db6772-335a-4d3b-976d-4f95f0c0f41c" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>GramophoneRT</DisplayName>
     <PublisherDisplayName>BeeWee</PublisherDisplayName>
