@@ -62,7 +62,7 @@ namespace GramophoneApp.ViewModels
             _discogs = discogs;
             _identityService = identityService;
 
-            Results = new IncrementalLoadingSearch(_identityService.TokenKey, _identityService.TokenSecret, _discogs);
+            Results = new IncrementalLoadingSearch(_discogs);
 
             this.PropertyChanged += SearchViewModel_PropertyChanged;
 
@@ -92,7 +92,7 @@ namespace GramophoneApp.ViewModels
                 searchQuery.Query = Query;
                 searchQuery.Type = SearchItemType.Release;
 
-                Results.Search(searchQuery);
+                Results.Search(_identityService.TokenKey, _identityService.TokenSecret, searchQuery);
             }
         }
     }

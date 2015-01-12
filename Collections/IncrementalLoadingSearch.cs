@@ -13,8 +13,8 @@ namespace Collections
     public class IncrementalLoadingSearch : ObservableCollection<Result>, ISupportIncrementalLoading
     {
         private readonly IClient _discogs;
-        private readonly string _tokenKey;
-        private readonly string _tokenSecret;
+        private string _tokenKey;
+        private string _tokenSecret;
 
         private bool _hasMoreItems;
         public bool HasMoreItems
@@ -29,11 +29,9 @@ namespace Collections
 
         private SearchQuery _query;
 
-        public IncrementalLoadingSearch(string tokenKey, string tokenSecret, IClient discogs)
+        public IncrementalLoadingSearch(IClient discogs)
         {
             _discogs = discogs;
-            _tokenKey = tokenKey;
-            _tokenSecret = tokenSecret;
             Clear();
         }
 
@@ -45,8 +43,10 @@ namespace Collections
             base.Clear();
         }
 
-        public async void Search(SearchQuery query)
+        public async void Search(string tokenKey, string tokenSecret, SearchQuery query)
         {
+            _tokenKey = tokenKey;
+            _tokenSecret = tokenSecret;
             _query = query;
             await GetPagedItems(Window.Current.Dispatcher);
         }
