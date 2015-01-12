@@ -30,7 +30,7 @@ namespace GramophoneApp.ViewModels
                 {
                     SimpleIoc.Default.Register<BeeWee.DiscogsRT.IClient>(() =>
                     {
-                        return new BeeWee.DiscogsRT.Client("useragent", "consumerKey", "consumerSecret");
+                        return new BeeWee.DiscogsRT.Client(Credentials.UserAgent, Credentials.ConsumerKey, Credentials.ConsumerSecret);
                     });
                 }
 
